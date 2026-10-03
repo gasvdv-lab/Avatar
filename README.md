@@ -1,58 +1,64 @@
-# AvatarEngine v0.2.0 — Anatomy Research Body
+# AvatarEngine v0.3.0 — Fixed Topology Human Base
 
 ## Test de app
 
+**Vaste live link:**
+
 https://gasvdv-lab.github.io/Avatar/
 
-Deze vaste link moet in elke relevante toekomstige release behouden blijven.
+Deze link blijft in elke relevante release staan.
 
-## Waarom een reset?
+## Grote wijziging
 
-De v0.1.x-body was opgebouwd uit losse lofts/ringen en zag daardoor uit als
-een primitieve mannequin. v0.2.0 gebruikt een andere methode:
+v0.3.0 gebruikt niet langer onze zelfgemaakte marching-cubes/mannequin als primaire basis.
 
-1. anatomische hoofdvolumes
-2. ribbenkast, abdomen en bekken als aparte organische volumes
-3. echte schouder/deltoid-overgang
-4. taps toelopende bovenarmen en onderarmen
-5. dij, knie, kuit en enkel als verschillende vormen
-6. één impliciet oppervlak
-7. marching cubes maakt daar één gesloten triangle mesh van
+De live viewer laadt de officiële **MakeHuman HM08 basemesh** vanuit een
+vastgepinde upstream commit:
 
-Python is dus opnieuw de bron van de body.
+`1f508f6083b2f823dab15de924b3bde72e08d77c`
 
-## Ontwerpmaat
+Bronbestand:
 
-Referentie:
-- lengte: 1.75 m
-- hoofdhoogte: 0.235 m
-- schouderbreedte: 0.420 m
-- borstbreedte: 0.355 m
-- taillebreedte: 0.285 m
-- heupbreedte: 0.350 m
-- kniehoogte: 0.465 m
-- handlengte: 0.180 m
-- voetlengte: 0.250 m
+`makehuman/data/3dobjs/base.obj`
 
-Dit zijn onze ontwerpwaarden voor een genderneutrale colony-crew mannequin,
-geen claim dat dit universele menselijke gemiddelden zijn.
+De upstream core asset is door het MakeHuman-project als CC0 vrijgegeven.
+
+## Waarom dit beter is
+
+HM08 heeft vaste topologie:
+- dezelfde vertex-ID's voor elk lichaam
+- dezelfde face-topologie
+- geschikt voor MakeHuman `.target` morphs
+- geschikt voor clothing helpers en rigs
+- bewezen menselijke anatomische topology
+
+In deze release tonen we alleen de officiële `body`-faces. Helpergeometrie,
+ogen, tanden, skirt/tights helpers en joints worden niet gerenderd.
+
+## Browserarchitectuur
+
+De GitHub Pages-viewer:
+1. downloadt `base.obj`
+2. parseert de originele vertices
+3. behoudt de oorspronkelijke vertex-indexen
+4. selecteert alleen de body-topologie
+5. trianguleert quads uitsluitend voor WebGL-rendering
+6. schaalt het zichtbare lichaam naar 1.75 m
+7. toont het op Android
 
 ## Python
 
-`generate_body.py` genereert de body opnieuw.
+`fixed_topology.py` bevat dezelfde OBJ-parserarchitectuur en alvast een
+`apply_sparse_target()` voor MakeHuman `.target` bestanden.
 
-Dependencies:
+Dat is belangrijk: vanaf hier hoeft Python geen nieuw lichaam te verzinnen.
+Python kan een bestaande professionele body gericht vervormen.
 
-```text
-numpy
-scikit-image
-```
+## Volgende stap
 
-## Internetonderzoek
-
-De richting is gebaseerd op:
-- NASA Human Integration Design Handbook / anthropometrie
-- MakeHuman/MPFB basemesh-principes
-- MakeHuman morph-target architectuur
-
-De volgende grote stap is een echte vaste-topologie basemesh met morph targets.
+v0.3.1:
+- neutral colony-crew morph preset
+- schouder/heup-verhouding
+- lichaamslengte
+- semi-anime proportion target
+- onderzoek welke MakeHuman targets we direct kunnen hergebruiken

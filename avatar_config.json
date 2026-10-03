@@ -1,10 +1,16 @@
 {
   "project": "AvatarEngine",
-  "version": "0.1.3.1",
+  "version": "0.3.0",
   "live_url": "https://gasvdv-lab.github.io/Avatar/",
-  "game": "space_colony",
-  "style": "smooth_semi_anime",
-  "current_asset": "gender_neutral_base_body",
-  "pose": "A-pose",
-  "viewer_mode": "inline_mesh"
+  "architecture": "MakeHuman HM08 fixed topology + morph targets",
+  "target_height_m": 1.75,
+  "upstream_commit": "1f508f6083b2f823dab15de924b3bde72e08d77c",
+  "upstream_base_obj": "https://cdn.jsdelivr.net/gh/makehumancommunity/makehuman@1f508f6083b2f823dab15de924b3bde72e08d77c/makehuman/data/3dobjs/base.obj",
+  "license": "CC0 upstream core asset",
+  "render_subset": "body",
+  "body_face_count": 13379,
+  "visible_body_vertex_range": [
+    0,
+    13379
+  ]
 }

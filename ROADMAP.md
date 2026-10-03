@@ -1,31 +1,35 @@
 # ROADMAP
 
-## v0.2.0 — Anatomy Research Body
-- complete body-generator reset
-- anatomische volumes
-- NASA-inspired dimension framework
-- one watertight mesh
-- Python marching-cubes surface
-- inline GitHub Pages viewer
+## v0.3.0 — Fixed Topology Human Base
+- official HM08 fixed topology
+- body-only rendering
+- preserve original vertex IDs
+- browser OBJ parser
+- 1.75 m normalization
+- Python target parser foundation
 
-## v0.2.1 — Anatomical Refinement
-- torso silhouette
-- shoulder anatomy
-- knee definition
-- hand/foot proportion
-- head/neck transition
+## v0.3.1 — Colony Crew Neutral Morph
+- neutral body proportions
+- astronaut/crew anthropometric target
+- subtle anime proportions
+- Python sparse morph support
 
-## v0.3.0 — Fixed Topology / Morph Architecture
-- investigate CC0 MakeHuman hm08 basemesh integration
-- preserve vertex IDs
-- Python target/morph parser
-- neutral colony preset
-- later anime targets
+## v0.3.2 — Morph Controls
+- height
+- shoulder width
+- hip width
+- body mass
+- muscularity
+- head scale
+
+## v0.4.0 — Costume Mannequin
+- stable neutral reference
+- clothing clearance
+- undersuit foundation
 
 ## Later
-- costume fitting
 - rig
+- animation
 - heads/faces
 - hair
-- body variants
-- animation
+- GLB export

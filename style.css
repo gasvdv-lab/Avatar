@@ -1,1 +1,16 @@
-/* v0.1.3.1: viewer styles are embedded directly in index.html */
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:#091019;color:#edf3f7;font-family:system-ui,sans-serif}
+body{overflow:hidden}
+header{height:72px;padding:12px 16px;border-bottom:1px solid #22303d;display:flex;align-items:center;justify-content:space-between}
+h1{margin:0;font-size:1.05rem}
+header p{margin:3px 0 0;color:#91a0ae;font-size:.75rem}
+.badge{font-size:.64rem;border:1px solid #33495c;border-radius:999px;padding:6px 9px;color:#a8cee8}
+main{height:calc(100dvh - 72px);display:grid;grid-template-rows:minmax(0,1fr) auto}
+.viewer{position:relative;min-height:0}
+canvas{display:block;width:100%;height:100%;touch-action:none;background:radial-gradient(circle at 50% 40%,#1a2c3a,#080d13 67%)}
+.status{position:absolute;left:12px;top:12px;max-width:calc(100% - 24px);padding:7px 9px;border:1px solid #253746;border-radius:8px;background:#09121cdd;font-size:.68rem;color:#b9c7d2}
+.controls{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:7px;flex-wrap:wrap;justify-content:center;width:96%}
+button{padding:9px 13px;border:1px solid #304355;border-radius:999px;background:#101a24e8;color:#f2f5f7;font:inherit;font-size:.76rem}
+footer{padding:10px 15px calc(10px + env(safe-area-inset-bottom));border-top:1px solid #22303d;background:#0c141d}
+footer strong{display:block;font-size:.78rem}
+footer span{color:#8797a5;font-size:.68rem}

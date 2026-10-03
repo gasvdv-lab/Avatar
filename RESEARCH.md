@@ -1,34 +1,31 @@
-# Research notes — Base Body v0.2.0
+# RESEARCH — Fixed Topology v0.3.0
 
-## NASA
+## Upstream
 
-NASA's Human Integration Design Handbook behandelt antropometrische maten zoals
-acromial height, bideltoid breadth, chest breadth, hip breadth, knee height,
-sitting height en shoulder-elbow length. NASA benadrukt ook dat ontwerpwaarden
-afhangen van taak, houding, mobiliteit en kleding/uitrusting.
+MakeHuman Community HM08 basemesh.
 
-Voor AvatarEngine gebruiken we dit als ontwerpmethode: landmarks en functionele
-maten eerst, artistieke stylisatie daarna.
+Pinned commit:
+`1f508f6083b2f823dab15de924b3bde72e08d77c`
 
-## MakeHuman / MPFB
+The OxiHuman provenance project independently records the same upstream
+MakeHuman v1.3.0 commit and SHA-256 for `base.obj`:
 
-MakeHuman gebruikt één basemesh met vaste topologie. De zichtbare hm08-body
-heeft 13.380 genummerde bodyvertices; helpergeometrie loopt verder tot 19.158
-vertices.
+`8e761e6624b8f54536409135d1636da63b32486a90d4897f84e121d144f6fb4c`
 
-Vormvarianten worden niet gemaakt door nieuwe primitieve onderdelen toe te
-voegen. Morph targets verplaatsen bestaande vertices terwijl de topologie
-gelijk blijft. Dat is uiteindelijk ook de gewenste architectuur voor
-AvatarEngine.
+## Body subset
 
-De core graphical assets van MakeHuman, waaronder de basemesh en targets,
-worden door het MakeHuman-project als CC0-assets gepubliceerd.
+MakeHuman API metadata identifies:
+- body faces: first 13,379 face records
+- visible body vertex range: 0..13,379
+- helper geometry beyond the body includes eyes, teeth, tongue, genital,
+  tights, skirt, hair and rig joint helpers.
 
-## v0.2.0 keuze
+MPFB's hm08 metadata likewise defines the `BODY` selection group as `body`.
 
-Deze release gebruikt nog niet de hm08-basemesh zelf. Hij gebruikt een
-research-based Python implicit-body generator om onmiddellijk een veel
-organischer prototype op GitHub Pages te kunnen testen.
+## Morph architecture
 
-De volgende architectuurstap kan de CC0 MakeHuman-basemesh rechtstreeks als
-vaste topologie gebruiken en Python morph targets laten toepassen.
+MakeHuman/MPFB `.target` files are sparse vertex displacement lists.
+They depend on stable vertex IDs. This is precisely why fixed topology is
+superior to our v0.2.0 marching-cubes body for character generation.
+
+`fixed_topology.py` already includes a target parser foundation.

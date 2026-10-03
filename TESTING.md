@@ -1,42 +1,21 @@
-# TESTING — v0.1.3
+# TESTING — v0.1.3.1
 
-## Vaste app-link
+## Vaste testlink
 
 https://gasvdv-lab.github.io/Avatar/
 
-## Automatische test
+## Android test
 
-Op een gewone Python-omgeving:
+1. Upload release naar `main`.
+2. Wacht tot GitHub Pages opnieuw gebouwd is.
+3. Open de vaste testlink.
+4. Controleer dat bovenaan `v0.1.3.1` staat.
+5. Controleer dat de status niet op `3D body laden...` blijft staan.
+6. De status moet het aantal vertices en triangles tonen.
+7. Test Front, 3/4, Side, Back en Reset.
+8. Sleep over de body om te draaien.
+9. Test pinch-zoom.
 
-```bash
-python -m unittest test_body.py -v
-```
+## Belangrijk
 
-## GitHub / Android test
-
-Na commit naar `main`:
-
-1. Open:
-   https://gasvdv-lab.github.io/Avatar/
-2. Controleer dat een 3D-body verschijnt.
-3. Sleep horizontaal en verticaal.
-4. Test pinch-zoom.
-5. Test Front.
-6. Test 3/4.
-7. Test Side.
-8. Test Back.
-9. Test Reset.
-
-## Visuele feedback
-
-Let vooral op:
-- schoudervorm
-- breedte borstkas
-- taille
-- heupen
-- armlengte
-- dijen
-- knieën
-- kuiten
-- handgrootte
-- voetgrootte
+De viewer gebruikt geen `fetch()` meer voor de body-mesh.

@@ -1,4 +1,4 @@
-# AvatarEngine v0.1.3 — GitHub 3D Body Viewer
+# AvatarEngine v0.1.3.1 — Inline Viewer Fix
 
 ## Test de app
 
@@ -6,45 +6,38 @@
 
 https://gasvdv-lab.github.io/Avatar/
 
-Deze link moet in elke relevante toekomstige release behouden blijven.
+## Wat is opgelost
 
-## Wat is nieuw
+De vorige viewer laadde de mesh via `fetch("body_mesh.json")`.
+Op Android/GitHub Pages bleef de pagina daardoor hangen op `3D body laden...`.
 
-De GitHub Pages-site toont nu de eerste echte interactieve 3D-versie van de
-genderneutrale base body.
+In v0.1.3.1 zit alles wat nodig is om de body te tonen rechtstreeks in
+`index.html`:
 
-- WebGL 3D-rendering
-- touch-rotatie
-- pinch-zoom
-- Front / 3/4 / Side / Back / Reset
-- smooth semi-anime basis
-- A-pose
-- Python blijft de bron van de geometrie
-- gegenereerde `body_mesh.json` wordt rechtstreeks door GitHub Pages geladen
+- mesh vertices
+- triangles
+- WebGL renderer
+- styling
+- touch controls
 
-## GitHub-structuur
-
-Alle projectbestanden staan rechtstreeks in de repository-root.
-
-De enige technische uitzondering blijft:
-
-`.github/workflows/deploy.yml`
-
-GitHub vereist die locatie voor Actions-workflows.
+Er is geen aparte netwerkrequest meer nodig om de 3D-body te laden.
 
 ## Upload
 
-Upload/vervang alle bestanden uit deze ZIP in de root van:
+Vervang/upload de bestanden uit deze ZIP in de root van:
 
 `gasvdv-lab/Avatar`
 
 Commit naar `main`.
 
-Daarna test je via:
+Test daarna via:
 
 https://gasvdv-lab.github.io/Avatar/
 
-## Huidige status
+## Controle
 
-Dit is nog een preview-mesh. De volgende fase is visuele body refinement:
-schouders, torso, heupen, benen, handen en voeten beoordelen op de echte viewer.
+Bovenaan moet staan:
+
+`v0.1.3.1 · Inline Body Viewer Fix`
+
+Daarmee zie je meteen of GitHub Pages de nieuwe versie serveert.

@@ -1,8 +1,9 @@
 {
   "project": "AvatarEngine",
-  "style": "smooth_semi_anime",
-  "gender_presentation": "neutral",
-  "pose": "A-pose",
+  "version": "0.1.3",
+  "live_url": "https://gasvdv-lab.github.io/Avatar/",
   "game": "space_colony",
-  "status": "flat_github_baseline"
+  "style": "smooth_semi_anime",
+  "current_asset": "gender_neutral_base_body",
+  "pose": "A-pose"
 }

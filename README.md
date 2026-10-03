@@ -1,38 +1,50 @@
-# AvatarEngine
-
-GitHub Pages-ready baseline.
+# AvatarEngine v0.1.3 — GitHub 3D Body Viewer
 
 ## Test de app
 
-Vaste testlink:
+**Vaste live link:**
 
 https://gasvdv-lab.github.io/Avatar/
 
-Gebruik deze link na elke release om de actuele GitHub Pages-versie te testen.
+Deze link moet in elke relevante toekomstige release behouden blijven.
 
-## Publicatie
+## Wat is nieuw
 
-Deze repository gebruikt een GitHub Actions workflow om de site rechtstreeks
-vanuit de repository-root naar GitHub Pages te publiceren.
+De GitHub Pages-site toont nu de eerste echte interactieve 3D-versie van de
+genderneutrale base body.
 
-Na upload/commit naar `main`:
+- WebGL 3D-rendering
+- touch-rotatie
+- pinch-zoom
+- Front / 3/4 / Side / Back / Reset
+- smooth semi-anime basis
+- A-pose
+- Python blijft de bron van de geometrie
+- gegenereerde `body_mesh.json` wordt rechtstreeks door GitHub Pages geladen
 
-1. Open tab `Actions`.
-2. Wacht tot `Deploy to GitHub Pages` groen is.
-3. Test de app via:
+## GitHub-structuur
 
-https://gasvdv-lab.github.io/Avatar/
+Alle projectbestanden staan rechtstreeks in de repository-root.
 
-## Structuur
+De enige technische uitzondering blijft:
 
-Alle projectbestanden staan rechtstreeks in de root.
-
-Enige technische uitzondering:
 `.github/workflows/deploy.yml`
 
-GitHub vereist die mapstructuur voor Actions-workflows.
+GitHub vereist die locatie voor Actions-workflows.
 
-## Vaste projectregel
+## Upload
 
-De testlink `https://gasvdv-lab.github.io/Avatar/` moet voortaan in elke
-relevante release-README blijven staan.
+Upload/vervang alle bestanden uit deze ZIP in de root van:
+
+`gasvdv-lab/Avatar`
+
+Commit naar `main`.
+
+Daarna test je via:
+
+https://gasvdv-lab.github.io/Avatar/
+
+## Huidige status
+
+Dit is nog een preview-mesh. De volgende fase is visuele body refinement:
+schouders, torso, heupen, benen, handen en voeten beoordelen op de echte viewer.

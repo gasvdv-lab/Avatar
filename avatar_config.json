@@ -1,6 +1,6 @@
 {
   "project": "AvatarEngine",
-  "version": "0.3.0.1",
+  "version": "0.4.0",
   "live_url": "https://gasvdv-lab.github.io/Avatar/",
   "architecture": "MakeHuman HM08 fixed topology + morph targets",
   "target_height_m": 1.75,
@@ -13,5 +13,29 @@
     0,
     13379
   ],
-  "viewer_style": "white_background"
+  "viewer_style": "white_background_future_astronaut_suit",
+  "shirt": {
+    "enabled": true,
+    "type": "tshirt",
+    "color": "blue",
+    "method": "procedural_shader_preview"
+  },
+  "outfit": {
+    "type": "future_colony_astronaut",
+    "method": "true_3d_overlay_meshes",
+    "layers": [
+      "blue_undersuit",
+      "white_torso_armor",
+      "shoulder_panels",
+      "forearm_guards",
+      "gloves",
+      "leg_protection",
+      "boots",
+      "chest_plate",
+      "utility_belt",
+      "side_pouches",
+      "life_support_backpack",
+      "orange_buckle"
+    ]
+  }
 }

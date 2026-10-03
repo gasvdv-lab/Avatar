@@ -1,17 +1,20 @@
 # TESTING
 
-Controleer dat alle bestanden rechtstreeks in de GitHub-root staan.
+## Vaste app-link
 
-Belangrijke bestanden:
-- main.py
-- body_base.py
-- body_proportions.py
-- body_mesh.py
-- index.html
-- app.js
-- style.css
-- README.md
-- ROADMAP.md
-- TESTING.md
+https://gasvdv-lab.github.io/Avatar/
 
-Er mogen geen project-submappen nodig zijn.
+## GitHub Pages
+
+Na upload naar GitHub:
+
+1. Commit alles naar `main`.
+2. Open `Actions`.
+3. Controleer dat `Deploy to GitHub Pages` slaagt.
+4. Open de vaste testlink:
+
+https://gasvdv-lab.github.io/Avatar/
+
+## Lokaal
+
+`index.html` moet rechtstreeks in de root aanwezig zijn.

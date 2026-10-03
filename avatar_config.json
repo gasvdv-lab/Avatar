@@ -1,6 +1,6 @@
 {
   "project": "AvatarEngine",
-  "version": "0.3.0",
+  "version": "0.3.0.1",
   "live_url": "https://gasvdv-lab.github.io/Avatar/",
   "architecture": "MakeHuman HM08 fixed topology + morph targets",
   "target_height_m": 1.75,
@@ -12,5 +12,6 @@
   "visible_body_vertex_range": [
     0,
     13379
-  ]
+  ],
+  "viewer_style": "white_background"
 }

@@ -1,4 +1,4 @@
-const VERSION = "0.3.0";
+const VERSION = "0.3.0.1";
 const TARGET_HEIGHT = 1.75;
 const BODY_FACE_COUNT = 13379;
 
@@ -102,7 +102,7 @@ function buildNormals(vertices,faces) {
 }
 
 const VS=`attribute vec3 p;attribute vec3 n;uniform mat4 m;uniform mat4 vp;varying vec3 N;void main(){N=mat3(m)*n;gl_Position=vp*m*vec4(p,1.0);}`;
-const FS=`precision mediump float;varying vec3 N;void main(){vec3 nn=normalize(N);vec3 L=normalize(vec3(-.6,.85,.55));float d=max(dot(nn,L),0.0);float toon=d>.64?.94:d>.32?.72:.48;float rim=pow(1.0-abs(nn.z),2.0)*.13;vec3 base=vec3(.69,.73,.77);gl_FragColor=vec4(base*toon+vec3(.12,.17,.22)*rim,1.0);}`;
+const FS=`precision mediump float;varying vec3 N;void main(){vec3 nn=normalize(N);vec3 L=normalize(vec3(-.6,.85,.55));float d=max(dot(nn,L),0.0);float toon=d>.64?.94:d>.32?.72:.48;float rim=pow(1.0-abs(nn.z),2.0)*.13;vec3 base=vec3(.55,.58,.62);gl_FragColor=vec4(base*toon+vec3(.12,.17,.22)*rim,1.0);}`;
 
 function compile(type,src){const s=gl.createShader(type);gl.shaderSource(s,src);gl.compileShader(s);if(!gl.getShaderParameter(s,gl.COMPILE_STATUS))throw new Error(gl.getShaderInfoLog(s));return s}
 const prog=gl.createProgram();gl.attachShader(prog,compile(gl.VERTEX_SHADER,VS));gl.attachShader(prog,compile(gl.FRAGMENT_SHADER,FS));gl.linkProgram(prog);gl.useProgram(prog);
@@ -133,7 +133,7 @@ function sc(s){return[s,0,0,0,0,s,0,0,0,0,s,0,0,0,0,1]}
 
 function draw() {
   if(!indexCount) return;
-  gl.enable(gl.DEPTH_TEST);gl.disable(gl.CULL_FACE);gl.clearColor(0,0,0,0);gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);
+  gl.enable(gl.DEPTH_TEST);gl.disable(gl.CULL_FACE);gl.clearColor(1,1,1,1);gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);
   const P=per(Math.PI/4,canvas.width/canvas.height,.1,20);
   const view=tr(0,-.87,-3.45);
   let model=mul(ry(yaw),rx(pitch)); model=mul(model,sc(zoom));

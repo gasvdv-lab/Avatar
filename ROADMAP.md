@@ -1,12 +1,9 @@
 # ROADMAP
 
-## v0.3.0 — Fixed Topology Human Base
-- official HM08 fixed topology
-- body-only rendering
-- preserve original vertex IDs
-- browser OBJ parser
-- 1.75 m normalization
-- Python target parser foundation
+## v0.3.0.1 — White Background
+- white studio background
+- improved contrast on the HM08 body
+- cleaner evaluation view
 
 ## v0.3.1 — Colony Crew Neutral Morph
 - neutral body proportions
@@ -26,10 +23,3 @@
 - stable neutral reference
 - clothing clearance
 - undersuit foundation
-
-## Later
-- rig
-- animation
-- heads/faces
-- hair
-- GLB export

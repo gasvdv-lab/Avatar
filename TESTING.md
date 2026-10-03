@@ -1,21 +1,27 @@
-# TESTING — v0.1.3.1
+# TESTING
 
 ## Vaste testlink
 
 https://gasvdv-lab.github.io/Avatar/
 
-## Android test
+## Na upload
 
-1. Upload release naar `main`.
-2. Wacht tot GitHub Pages opnieuw gebouwd is.
+1. Commit alle bestanden naar `main`.
+2. Wacht tot GitHub Pages vernieuwd is.
 3. Open de vaste testlink.
-4. Controleer dat bovenaan `v0.1.3.1` staat.
-5. Controleer dat de status niet op `3D body laden...` blijft staan.
-6. De status moet het aantal vertices en triangles tonen.
-7. Test Front, 3/4, Side, Back en Reset.
-8. Sleep over de body om te draaien.
-9. Test pinch-zoom.
+4. Controleer dat bovenaan `v0.2.0 · Anatomy Research Body` staat.
+5. Body moet direct verschijnen.
+6. Test Front / 3/4 / Side / Back / Reset.
+7. Test draaien en pinch-zoom.
 
-## Belangrijk
+## Visuele beoordeling
 
-De viewer gebruikt geen `fetch()` meer voor de body-mesh.
+Let op:
+- is de torso menselijker?
+- overgang nek/schouders
+- armvorm
+- bekken/heupen
+- dij/knie/kuit
+- handen
+- voeten
+- algemene genderneutraliteit

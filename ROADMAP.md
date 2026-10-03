@@ -1,22 +1,31 @@
 # ROADMAP
 
-## v0.1.3.1 — Inline Viewer Fix
-- mesh rechtstreeks in index.html
-- geen fetch voor bodydata
-- WebGL renderer inline
-- GitHub Pages / Android robuuster
+## v0.2.0 — Anatomy Research Body
+- complete body-generator reset
+- anatomische volumes
+- NASA-inspired dimension framework
+- one watertight mesh
+- Python marching-cubes surface
+- inline GitHub Pages viewer
 
-## v0.1.4 — Body Silhouette Refinement
-Na visuele bevestiging van de viewer:
-- schouders
-- torso
-- heupen
-- benen
-- handen
-- voeten
+## v0.2.1 — Anatomical Refinement
+- torso silhouette
+- shoulder anatomy
+- knee definition
+- hand/foot proportion
+- head/neck transition
 
-## v0.1.5 — Welded Body Prototype
-- schonere gewrichtsovergangen
-- voorbereiding op rigging
+## v0.3.0 — Fixed Topology / Morph Architecture
+- investigate CC0 MakeHuman hm08 basemesh integration
+- preserve vertex IDs
+- Python target/morph parser
+- neutral colony preset
+- later anime targets
 
-## v0.2.0 — Neutral Undersuit
+## Later
+- costume fitting
+- rig
+- heads/faces
+- hair
+- body variants
+- animation

@@ -1,43 +1,58 @@
-# AvatarEngine v0.1.3.1 — Inline Viewer Fix
+# AvatarEngine v0.2.0 — Anatomy Research Body
 
 ## Test de app
 
-**Vaste live link:**
-
 https://gasvdv-lab.github.io/Avatar/
 
-## Wat is opgelost
+Deze vaste link moet in elke relevante toekomstige release behouden blijven.
 
-De vorige viewer laadde de mesh via `fetch("body_mesh.json")`.
-Op Android/GitHub Pages bleef de pagina daardoor hangen op `3D body laden...`.
+## Waarom een reset?
 
-In v0.1.3.1 zit alles wat nodig is om de body te tonen rechtstreeks in
-`index.html`:
+De v0.1.x-body was opgebouwd uit losse lofts/ringen en zag daardoor uit als
+een primitieve mannequin. v0.2.0 gebruikt een andere methode:
 
-- mesh vertices
-- triangles
-- WebGL renderer
-- styling
-- touch controls
+1. anatomische hoofdvolumes
+2. ribbenkast, abdomen en bekken als aparte organische volumes
+3. echte schouder/deltoid-overgang
+4. taps toelopende bovenarmen en onderarmen
+5. dij, knie, kuit en enkel als verschillende vormen
+6. één impliciet oppervlak
+7. marching cubes maakt daar één gesloten triangle mesh van
 
-Er is geen aparte netwerkrequest meer nodig om de 3D-body te laden.
+Python is dus opnieuw de bron van de body.
 
-## Upload
+## Ontwerpmaat
 
-Vervang/upload de bestanden uit deze ZIP in de root van:
+Referentie:
+- lengte: 1.75 m
+- hoofdhoogte: 0.235 m
+- schouderbreedte: 0.420 m
+- borstbreedte: 0.355 m
+- taillebreedte: 0.285 m
+- heupbreedte: 0.350 m
+- kniehoogte: 0.465 m
+- handlengte: 0.180 m
+- voetlengte: 0.250 m
 
-`gasvdv-lab/Avatar`
+Dit zijn onze ontwerpwaarden voor een genderneutrale colony-crew mannequin,
+geen claim dat dit universele menselijke gemiddelden zijn.
 
-Commit naar `main`.
+## Python
 
-Test daarna via:
+`generate_body.py` genereert de body opnieuw.
 
-https://gasvdv-lab.github.io/Avatar/
+Dependencies:
 
-## Controle
+```text
+numpy
+scikit-image
+```
 
-Bovenaan moet staan:
+## Internetonderzoek
 
-`v0.1.3.1 · Inline Body Viewer Fix`
+De richting is gebaseerd op:
+- NASA Human Integration Design Handbook / anthropometrie
+- MakeHuman/MPFB basemesh-principes
+- MakeHuman morph-target architectuur
 
-Daarmee zie je meteen of GitHub Pages de nieuwe versie serveert.
+De volgende grote stap is een echte vaste-topologie basemesh met morph targets.
